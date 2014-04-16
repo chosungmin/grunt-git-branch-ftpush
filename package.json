@@ -1,22 +1,15 @@
 {
-  "name": "git-branch-check",
+  "name": "git-brach-check",
   "version": "0.2.0",
-  "description": "Git Branch Check",
+  "description": "git branch check",
   "main": "Gruntfile.js",
   "dependencies": {
-    "grunt": "~0.4.4",
+    "grunt": "~0.4.4"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/chosungmin/gitBranchCheck.git"
   },
-  "keywords": [
-    "Git",
-    "Branch",
-    "Check",
-    "+",
-    "grunt-contrib-ftpush"
-  ],
   "author": "chosungmin <chosungmin.kr@gmail.com> (https://github.com/chosungmin/gitBranchCheck/)",
   "license": "MIT",
   "bugs": {
