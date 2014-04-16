@@ -9,7 +9,7 @@
 'use strict';
 
 module.exports = function(grunt){
-	grunt.registerMultiTask('GitBranchCheck', 'GitBranchCheck', function() {
+	grunt.registerMultiTask('GitBranchCheck', 'Git Branch Check', function() {
 		var done = this.async();
 		var options = this.options({
 			ftp_root : this.options.ftp_root || ''
@@ -35,15 +35,17 @@ module.exports = function(grunt){
 
 		grunt.util.spawn({
 			cmd: 'git',
-			args: ['branch']
+			args: ['status']
 		}, function (err, res) {
 			if (err) {
-				 grunt.fail.fatal(err);
+				console.log('git 저장소가 설정되어 있지 않습니다.\r\ngit 저장소를 설정해주세요.\r\nex) git init');
+				grunt.fail.fatal(err);
 			} else {
-				res.stdout = (res.stdout === '') ? '* master' : res.stdout ;
-
-				branch_name = res.stdout.match(/\* (.)+/);
-				branch_name = branch_name[0].replace(/\* /, '');
+				//res.stdout = (res.stdout === '') ? '* master' : res.stdout ;
+				//branch_name = res.stdout.match(/\* (.)+/);
+				//branch_name = branch_name[0].replace(/\* /, '');
+				branch_name = res.stdout.match(/^On branch\s(.)+\n/);
+				branch_name = branch_name[0].replace(/On branch\s|\n/g, '');
 				ftp_desc = ftp_root + branch_name;
 				branch_name_all = res.stdout.replace('*', '').split(/\n/);
 

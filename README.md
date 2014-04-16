@@ -1,6 +1,6 @@
 # GitBranchCheck
 
-> gruntftp 사 push 폴더를 git branch로 자 설정시켜주는 플러그인
+> git과 grunt-contrib-ftpush 사용시 push 폴더를 git branch로 자동 설정시켜주는 플러그인
 
 ## Getting Started
 This plugin requires Grunt `~0.4.4`
@@ -9,12 +9,14 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 
 ```shell
 npm install GitBranchCheck --save-dev
+npm install grunt-contrib-ftpush --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
 grunt.loadNpmTasks('GitBranchCheck');
+grunt.loadNpmTasks('grunt-contrib-ftpush');
 ```
 
 ## The "GitBranchCheck" task
@@ -24,62 +26,32 @@ In your project's Gruntfile, add a section named `GitBranchCheck` to the data ob
 
 ```js
 grunt.initConfig({
-  GitBranchCheck: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+	GitBranchCheck: {
+		ftp : {
+			options : {
+				ftp_root: '/서비스 root 폴더/'
+			}
+		}
+	}
 });
 ```
 
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+ftpush 설정 추가 'dest: '<%= grunt.config.get(\'ftp_dest.path\') %>'
 
 ```js
-grunt.initConfig({
-  GitBranchCheck: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+ftpush: {
+  build: {
+    auth: {
+      host: '',
+      port: '',
+      authKey: ''
     },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  GitBranchCheck: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
+    src: '',
+    dest: '<%= grunt.config.get(\'ftp_dest.path\') %>',
+    exclusions: '',
+    keep: []
+  }
+}
 ```
 
 ## Contributing

@@ -1,6 +1,6 @@
 {
   "name": "GitBranchCheck",
-  "description": "gruntftp 사 push 폴더를 git branch로 자 설정시켜주는 플러그인",
+  "description": "git과 grunt-contrib-ftpush 사용시 push 폴더를 git branch로 자동 설정시켜주는 플러그인",
   "version": "0.1.0",
   "homepage": "https://github.com/chosungmin/gitBranchCheck",
   "author": {
@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-contrib-ftpush": "^0.3.2"
   },
   "peerDependencies": {
     "grunt": "~0.4.4"
