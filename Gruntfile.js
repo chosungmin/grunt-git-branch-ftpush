@@ -1,6 +1,6 @@
 /*
- * GitBranchCheck
- * https://github.com/chosungmin/gitBranchCheck
+ * grunt-git-branch-ftpush
+ * https://github.com/chosungmin/grunt-git-branch-ftpush.git
  *
  * Copyright (c) 2014 chosungmin
  * Licensed under the MIT license.
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    GitBranchCheck: {
+    GitBranchFtpush: {
 		ftp : {
 			options : {
 				ftp_root: '/test/'
@@ -23,6 +23,6 @@ module.exports = function(grunt) {
 
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['GitBranchCheck']);
+  grunt.registerTask('default', ['GitBranchFtpush']);
 
 };

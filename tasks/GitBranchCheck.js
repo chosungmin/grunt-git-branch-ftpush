@@ -1,6 +1,6 @@
 /*
- * GitBranchCheck
- * https://github.com/chosungmin/gitBranchCheck
+ * grunt-git-branch-ftpush
+ * https://github.com/chosungmin/grunt-git-branch-ftpush.git
  *
  * Copyright (c) 2014 chosungmin
  * Licensed under the MIT license.
@@ -9,7 +9,7 @@
 'use strict';
 
 module.exports = function(grunt){
-	grunt.registerMultiTask('GitBranchCheck', 'Git Branch Check', function() {
+	grunt.registerMultiTask('GitBranchFtpush', 'Git Branch FTP Push', function() {
 		var done = this.async();
 		var options = this.options({
 			ftp_root : this.options.ftp_root || ''

@@ -1,19 +1,27 @@
 {
-  "name": "git-branch-check",
+  "name": "grunt-git-branch-ftpush",
   "version": "0.2.0",
-  "description": "git branch check",
+  "description": "git과 grunt-contrib-ftpush 사용시 push 폴더를 git branch로 자동 설정시켜주는 플러그인",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "~0.4.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chosungmin/gitBranchCheck.git"
+    "url": "https://github.com/chosungmin/grunt-git-branch-ftpush.git"
   },
-  "author": "chosungmin <chosungmin.kr@gmail.com> (https://github.com/chosungmin/gitBranchCheck/)",
+  "author": "chosungmin <chosungmin.kr@gmail.com> (https://github.com/chosungmin/grunt-git-branch-ftpush/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chosungmin/gitBranchCheck/issues"
+    "url": "https://github.com/chosungmin/grunt-git-branch-ftpush/issues"
   },
-  "homepage": "https://github.com/chosungmin/gitBranchCheck"
+  "homepage": "https://github.com/chosungmin/grunt-git-branch-ftpush",
+  "devDependencies": {},
+  "scripts": {},
+  "keywords": [
+    "git",
+    "branch",
+    "ftpush",
+    "ftp"
+  ]
 }
