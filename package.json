@@ -1,6 +1,6 @@
 {
   "name": "grunt-git-branch-ftpush",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "git과 grunt-contrib-ftpush 사용시 push 폴더를 git branch로 자동 설정시켜주는 플러그인",
   "main": "Gruntfile.js",
   "dependencies": {
@@ -16,7 +16,9 @@
     "url": "https://github.com/chosungmin/grunt-git-branch-ftpush/issues"
   },
   "homepage": "https://github.com/chosungmin/grunt-git-branch-ftpush",
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-ftpush": "~0.3.2"
+  },
   "scripts": {},
   "keywords": [
     "git",
