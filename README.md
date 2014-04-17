@@ -9,6 +9,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 
 ```shell
 npm install grunt-git-branch-ftpush --save-dev
+npm install grunt-contrib-ftpush --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
@@ -64,4 +65,4 @@ grunt.registerTask('push', ['GitBranchFtpush', 'ftpush']);
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.2.1 beta release
+0.2.2 beta release
