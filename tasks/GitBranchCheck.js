@@ -35,17 +35,15 @@ module.exports = function(grunt){
 
 		grunt.util.spawn({
 			cmd: 'git',
-			args: ['status']
+			args: ['branch']
 		}, function (err, res) {
 			if (err) {
 				console.log('git 저장소가 설정되어 있지 않습니다.\r\ngit 저장소를 설정해주세요.\r\nex) git init');
 				grunt.fail.fatal(err);
 			} else {
-				//res.stdout = (res.stdout === '') ? '* master' : res.stdout ;
-				//branch_name = res.stdout.match(/\* (.)+/);
-				//branch_name = branch_name[0].replace(/\* /, '');
-				branch_name = res.stdout.match(/^On branch\s(.)+\n/);
-				branch_name = branch_name[0].replace(/On branch\s|\n/g, '');
+				branch_name = res.stdout.match(/\* (.)+/);
+				branch_name = (branch_name === null) ? branch_name = ['master'] : branch_name ;
+				branch_name = branch_name[0].replace(/\* /, '').replace('/', '_');
 				ftp_desc = ftp_root + branch_name;
 				branch_name_all = res.stdout.replace('*', '').split(/\n/);
 
@@ -61,7 +59,7 @@ module.exports = function(grunt){
 				});
 
 				for(var i=0, cnt=branch_name_all.length; i<cnt; i++){
-					branch_name_all[i] = branch_name_all[i].replace(/^\s*|\s*$/g, '') + '_build.json';
+					branch_name_all[i] = branch_name_all[i].replace(/^\s*|\s*$/g, '').replace('/', '_') + '_build.json';
 				}
 				branch_name_all.push('build.json');
 				branch_name_all.push('build_check.txt');
